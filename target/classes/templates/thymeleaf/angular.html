@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="ISO-8859-1"/>
+    <title>Pagina Principal de Usuarios</title>
+</head>
+
+<body ng-app="demo">
+<hr/>
+<div class="container" ng-controller="Controlador">
+    <div class="row">
+        <label>Usuario</label> <input type="text" ng-model="usuario.nombre" class="input-sm spacing"/>
+        <!--  <label>Skills</label><input type="text" ng-model="skills" ng-list class="input-sm custom-width spacing" placeholder="use comma to separate skills"/>-->
+        <button ng-click="guardar()" class="btn btn-sm btn-info">Guarda Usuario</button>
+    </div>
+    <hr/>
+    <div class="row">
+        <p>{{ usuarios | json}}</p>
+    </div>
+    <hr/>
+    <div class="row" ng-repeat="usuario in usuarios">
+        <div class="">
+            <h3>{{ usuario.nombre }}</h3>
+            <!--  <span ng-repeat="skill in user.skillDtos" class="spacing">{{skill.skillName}}</span>-->
+        </div>
+    </div>
+</div>
+</body>
+<!-- Componentes de la presentacion y librerias -->
+<script src="js/lib/angular.min.js"></script>
+<script src="js/lib/ui-bootstrap-tpls-2.5.0.min.js"></script>
+<link rel="stylesheet" href="css/lib/bootstrap.min.css"/>
+<link rel="stylesheet" href="css/app/app.css"/>
+
+<!-- Componentes de la aplicacion SPA -->
+<script src="js/app/app.js"></script>
+<script src="js/app/Controlador.js"></script>
+<script src="js/app/Servicios.js"></script>
+</html>
